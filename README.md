@@ -10,8 +10,8 @@ This project demonstrates how to set up a basic home lab running Active Director
 
 ## Setup Instructions
 
-1. [Install Oracle VirtualBox](setup/windows-server-setup.md)
-2. [Create and Configure VMs](setup/windows-client-setup.md)
+1. [Windows Server Setup](setup/windows-server-setup.md)
+2. [Windows Client Setup](setup/windows-client-setup.md)
 3. [Install and Configure Active Directory](setup/active-directory-setup.md)
 4. [Use PowerShell to Add Users](setup/powershell-usage.md)
 
