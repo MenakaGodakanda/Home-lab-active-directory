@@ -160,7 +160,7 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    -  Ensure your Routing and Remote Access is configured.<br><br>
    ![57](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/de3aa67d-f2ff-4ac5-9040-1bfbf81334d2)
 
-### 7.Add a DHCP Server
+### 7. Add a DHCP Server
 
 1. **Open Server Manager**:
    - Server Manager should open automatically upon logging in. If not, open it from the Start menu.
@@ -188,18 +188,47 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Click `Install`. The installation will begin and may take a few minutes.
    - Do not close the window until the installation is complete.
 
-### 8.DHCP  Configuration
+### 8. DHCP Configuration to Setup Scope
 
-1. **Open DNS Manager**:
-   - In Server Manager, go to `Tools` > `DNS`.
+1. **Open DHCP Manager**:
+   - In Server Manager, go to `Tools` > `DHCP`.
 
-2. **Configure Forward Lookup Zones**:
-   - Expand the server name, then expand `Forward Lookup Zones`.
-   - Ensure there is a zone for your domain (e.g., `mydomain.com`).
+2. **Setup Scope**:
+   - Expand the server name, then right click on the `IPv4`, and select `New Scope`.
+   - Click `Next` on the `New Scope Wizard`.
 
-3. **Configure Reverse Lookup Zones** (Optional):
-   - Right-click on `Reverse Lookup Zones` and select `New Zone`.
-   - Follow the wizard to create a reverse lookup zone (use your network’s subnet, e.g., `192.168.1.x`).
+3. **Scope Name**:
+   - Name the scope (e.g., `172.16.0.100-200`) and click `Next`.
+  
+4. **IP Address Range**:
+   - Enter IP Address Range details and click `Next`.
+   ![74](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/a3a78ed5-0816-406c-a4d8-0ab58b3517bb)
+
+5. **Add Exclusions and Delay**:
+   - Click `Next` on the `Add Exclusions and Delay` page.
+
+6. **Lease Duration**:
+   - Set the duration for scope lease (e.g., `8 Days`) and click `Next`.
+
+7. **Configure DHCP Options**:
+   - Check the box for `Yes, I want to configure these options now` and click `Next`.
+
+8. **Router (Default Gateway**:
+   - Add an IP address for a router used by client (e.g., `172.16.0.1`) > `Add` and click `Next`.
+
+9. **Domain Name and DNS Servers**:
+   - Specify the parent domain (e.g., `mydomain.com`)
+   - Ensure the IP address is added and click `Next`.
+
+9. **WINS Servers**:
+   - Click `Next` on the `WINS Servers` page.
+
+10. **Activate Scope**:
+   - Check the box for `Yes, I want to activate this scope now` and click `Next`.
+   - Click `Finish` to complete the new scope wizard.
+
+
+
 
 
 
@@ -211,6 +240,8 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
 2. **Configure Forward Lookup Zones**:
    - Expand the server name, then expand `Forward Lookup Zones`.
    - Ensure there is a zone for your domain (e.g., `mydomain.com`).
+  
+   - 
 
 3. **Configure Reverse Lookup Zones** (Optional):
    - Right-click on `Reverse Lookup Zones` and select `New Zone`.
