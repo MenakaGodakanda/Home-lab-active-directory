@@ -22,7 +22,8 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Choose `Role-based or feature-based installation` and click `Next`.
 
 4. **Select Destination Server**:
-   - Ensure your local server is selected and click `Next`.
+   - Ensure your local server is selected and click `Next`.<br><br>
+   ![Screenshot 2024-05-26 150451](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/37a9cfe2-ce08-42f4-a91a-31955e485570)
 
 5. **Select Server Roles**:
    - Check the box for `Active Directory Domain Services`.
@@ -46,7 +47,7 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Click the flag and then click `Promote this server to a domain controller`.
 
 2. **Deployment Configuration**:
-   - Choose `Add a new forest` and enter a root domain name (e.g., `mydomain.local`).
+   - Choose `Add a new forest` and enter a root domain name (e.g., `mydomain.com`).
    - Click `Next`.
 
 3. **Domain Controller Options**:
@@ -80,7 +81,28 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
 2. **Verify AD Installation**:
    - Open `Server Manager`.
    - Go to `Tools` > `Active Directory Users and Computers`.
-   - Ensure your domain (`mydomain.local`) is listed and accessible.
+   - Ensure your domain (`mydomain.com`) is listed and accessible.<br><br>
+   ![Screenshot 2024-05-26 213505](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/3c0c2524-3895-4d86-a0fb-f14334244570)
+
+### 4. Creating Organizational Units (OUs) for Admins
+
+1. **Create Organizational Units (OUs)**:
+   - In `Active Directory Users and Computers`, right-click on your domain (e.g., `mydomain.local`), select `New` > `Organizational Unit`.
+   - Name the OU (e.g., `_ADMINS`) and click `OK`.
+
+2. **Create Admin Accounts**:
+   - Right-click on the OU you created (e.g., `_ADMINS`), select `New` > `User`.
+   - Enter user details and click `Next`.
+   ![26](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/eb468fbc-f763-4477-b047-1da9da90951a) <br><br>
+   - Set a password and configure password options.
+   - Click `Next` and then `Finish`.
+  
+3. **Make a Domain Admin**:
+   - Right-click on the Admin account you created (e.g., `Menaka Godakanda`), select `Properties`.
+   - Select `Member Of` > `Add`.
+   - Enter the object names to select (e.g., `domain admins`) > `Check Names` and `OK`.
+   - Click `Apply` and then `OK`.
+
 
 ### 4. DNS Configuration
 
@@ -89,24 +111,12 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
 
 2. **Configure Forward Lookup Zones**:
    - Expand the server name, then expand `Forward Lookup Zones`.
-   - Ensure there is a zone for your domain (e.g., `mydomain.local`).
+   - Ensure there is a zone for your domain (e.g., `mydomain.com`).
 
 3. **Configure Reverse Lookup Zones** (Optional):
    - Right-click on `Reverse Lookup Zones` and select `New Zone`.
    - Follow the wizard to create a reverse lookup zone (use your network’s subnet, e.g., `192.168.1.x`).
-
-### 5. Creating Organizational Units (OUs) and Users
-
-1. **Create Organizational Units (OUs)**:
-   - In `Active Directory Users and Computers`, right-click on your domain (e.g., `mydomain.local`), select `New` > `Organizational Unit`.
-   - Name the OU (e.g., `Employees`) and click `OK`.
-
-2. **Create User Accounts**:
-   - Right-click on the OU you created (e.g., `Employees`), select `New` > `User`.
-   - Enter user details and click `Next`.
-   - Set a password and configure password options.
-   - Click `Next` and then `Finish`.
-
+   - 
 ### Conclusion
 
 Your Windows Server is now configured as an Active Directory Domain Controller. You have verified the AD installation and configured DNS. You can now proceed to join client machines to the domain and manage users and groups through Active Directory.
