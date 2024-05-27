@@ -92,7 +92,7 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
 
 2. **Create Admin Accounts**:
    - Right-click on the OU you created (e.g., `_ADMINS`), select `New` > `User`.
-   - Enter user details and click `Next`.
+   - Enter user details and click `Next`. <br><br>
    ![26](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/eb468fbc-f763-4477-b047-1da9da90951a) <br><br>
    - Set a password and configure password options.
    - Click `Next` and then `Finish`.
@@ -201,7 +201,7 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Name the scope (e.g., `172.16.0.100-200`) and click `Next`.
   
 4. **IP Address Range**:
-   - Enter IP Address Range details and click `Next`.
+   - Enter IP Address Range details and click `Next`. <br><br>
    ![74](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/a3a78ed5-0816-406c-a4d8-0ab58b3517bb)
 
 5. **Add Exclusions and Delay**:
@@ -227,26 +227,13 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Check the box for `Yes, I want to activate this scope now` and click `Next`.
    - Click `Finish` to complete the new scope wizard.
 
+11. **Authorize DHCP Server**:
+   - Right-click on DHCP server and click `Authorize`.
+   - Right-click again on DHCP server and click `Refresh`.
+   - You can see the IPv4 turns green and the scope. <br><br>
+   ![86](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/2114d70e-505f-4eb4-9b8a-08ead8114da3)
 
-
-
-
-
-### 4. DNS Configuration
-
-1. **Open DNS Manager**:
-   - In Server Manager, go to `Tools` > `DNS`.
-
-2. **Configure Forward Lookup Zones**:
-   - Expand the server name, then expand `Forward Lookup Zones`.
-   - Ensure there is a zone for your domain (e.g., `mydomain.com`).
-  
-   - 
-
-3. **Configure Reverse Lookup Zones** (Optional):
-   - Right-click on `Reverse Lookup Zones` and select `New Zone`.
-   - Follow the wizard to create a reverse lookup zone (use your network’s subnet, e.g., `192.168.1.x`).
-   - 
+ 
 ### Conclusion
 
 Your Windows Server is now configured as an Active Directory Domain Controller. You have verified the AD installation and configured DNS. You can now proceed to join client machines to the domain and manage users and groups through Active Directory.
