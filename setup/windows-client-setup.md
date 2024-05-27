@@ -17,19 +17,19 @@ This guide provides detailed instructions for setting up a Windows Client virtua
 
 2. **Create a New VM**:
    - Click on `New` to create a new VM.
-   - Name the VM (e.g., "AD_Client").
+   - Name the VM (e.g., "CLIENT1").
    - Set the Type to `Microsoft Windows` and the Version to `Windows 10 (64-bit)`.
    - Click `Next`.
 
 3. **Allocate Memory**:
-   - Allocate at least 2 GB (2048 MB) of memory. More is better if your host system can support it.
+   - Allocate at least 4 GB (4096 MB) of memory. More is better if your host system can support it.
    - Click `Next`.
 
 4. **Create a Virtual Hard Disk**:
    - Select `Create a virtual hard disk now` and click `Create`.
    - Choose `VDI (VirtualBox Disk Image)` and click `Next`.
    - Select `Dynamically allocated` and click `Next`.
-   - Set the disk size to at least 40 GB and click `Create`.
+   - Set the disk size to at least 25 GB and click `Create`.
 
 ### 2. Configure the Virtual Machine
 
@@ -41,9 +41,14 @@ This guide provides detailed instructions for setting up a Windows Client virtua
    - Browse to and select the Windows 10 ISO file.
    - Click `OK` to save the settings.
 
+2. **System Configuration**:
+   - Go to the `System` > `Processor` section.
+   - Allocate 4 processors. More is better if your host system can support it.
+   - Click `OK` to save the settings.
+
 2. **Network Configuration**:
    - Go to the `Network` section.
-   - Ensure `Adapter 1` is enabled and attached to `Bridged Adapter`. This will allow your VM to be on the same network as your host machine.
+   - Ensure `Adapter 1` is enabled and attached to `Internal Nettwork` and name to `intnet`. This will allow your VM to be on the same network as your host machine.
    - Click `OK` to save the settings.
 
 ### 3. Install Windows 10
