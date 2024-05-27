@@ -2,6 +2,11 @@
 
 This project demonstrates how to set up a basic home lab running Active Directory on Oracle VirtualBox, and how to add users using PowerShell.
 
+## Project Overview
+This figure, which offers a high-level overview and visualisation, aids in understanding the project. <br><br>
+![xxx](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/66b83e32-f94c-4e63-8bf2-477bade5793c)
+
+
 ## Project Structure
 
 - `scripts/`: Contains PowerShell scripts for automation.
