@@ -103,6 +103,105 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Enter the object names to select (e.g., `domain admins`) > `Check Names` and `OK`.
    - Click `Apply` and then `OK`.
 
+4. **Verify Domain Admin Account**:
+   - Sign out from the domain controller.
+   - After Sign out, log in using the domain admin credentials (`a-mgodakanda`).
+
+### 5. Install RAS / NAT
+
+1. **Open Server Manager**:
+   - Server Manager should open automatically upon logging in. If not, open it from the Start menu.
+
+2. **Add Roles and Features**:
+   - In Server Manager, click on `Manage` > `Add Roles and Features`.
+   - Click `Next` through the `Before you begin` page.
+
+3. **Select Installation Type**:
+   - Choose `Role-based or feature-based installation` and click `Next`.
+
+4. **Select Destination Server**:
+   - Ensure your local server is selected and click `Next`.
+
+5. **Select Server Roles**:
+   - Check the box for `Remote Access` and click `Next`.
+
+6. **Select Features**:
+   - Click `Next` on the `Features` page (no additional features are needed).
+
+7. **Select Remote Access**:
+   - Click `Next` on the `Remote Access` page.
+
+8. **Select Role Services of Remote Access**:
+   - Check the box for `Routing` and click `Add Features`.
+   - Then `DirectAccess and VPN (RAS)` will be automatically checked.
+   - Click `Next` on the `Role Services of Remote Access` page.
+
+9. **Select Web Server Role (IIS)**:
+   - Click `Next` on the ` Web Server Role` page.
+  
+10. **Select Role Services of Web Server Role**:
+   - Click `Next` on the `Role Services of Web Server Role` page.  
+
+11. **Confirm Installation Selections**:
+   - Click `Install`. The installation will begin and may take a few minutes.
+   - Do not close the window until the installation is complete.
+
+### 6. Routing and Remote Access Server Configuration
+
+1. **Open Routing and Remote Access**:
+   - In Server Manager, go to `Tools` > `Routing and Remote Access`.
+
+2. **Configure Routing and Remote Access**:
+   -  Right-click on `DC (local)` and select `Configure and Enable Routing and Remote Access`.
+   -  Click `Next` on the ` Routing and Remote Access Server Setup Wizard` page.
+   -  Check the `NAT` on the `Configueration` page and click `Next`.
+   -  Check the `Use this public interface to connect to the Internet` on the `NAT Internet Connection` page and select a network interface to connect to the Internet (e.g., `_INTERNET_`).
+   -  Click `Next` and `Finish`.
+   -  Ensure your Routing and Remote Access is configured.<br><br>
+   ![57](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/de3aa67d-f2ff-4ac5-9040-1bfbf81334d2)
+
+### 7.Add a DHCP Server
+
+1. **Open Server Manager**:
+   - Server Manager should open automatically upon logging in. If not, open it from the Start menu.
+
+2. **Add Roles and Features**:
+   - In Server Manager, click on `Manage` > `Add Roles and Features`.
+   - Click `Next` through the `Before you begin` page.
+
+3. **Select Installation Type**:
+   - Choose `Role-based or feature-based installation` and click `Next`.
+
+4. **Select Destination Server**:
+   - Ensure your local server is selected and click `Next`.
+
+5. **Select Server Roles**:
+   - Check the box for `DHCP Server` > `Add Features` and click `Next`.
+
+6. **Select Features**:
+   - Click `Next` on the `Features` page (no additional features are needed).
+
+7. **Select DHCP Server**:
+   - Click `Next` on the `DHCP Server` page.
+
+8. **Confirm Installation Selections**:
+   - Click `Install`. The installation will begin and may take a few minutes.
+   - Do not close the window until the installation is complete.
+
+### 8.DHCP  Configuration
+
+1. **Open DNS Manager**:
+   - In Server Manager, go to `Tools` > `DNS`.
+
+2. **Configure Forward Lookup Zones**:
+   - Expand the server name, then expand `Forward Lookup Zones`.
+   - Ensure there is a zone for your domain (e.g., `mydomain.com`).
+
+3. **Configure Reverse Lookup Zones** (Optional):
+   - Right-click on `Reverse Lookup Zones` and select `New Zone`.
+   - Follow the wizard to create a reverse lookup zone (use your network’s subnet, e.g., `192.168.1.x`).
+
+
 
 ### 4. DNS Configuration
 
