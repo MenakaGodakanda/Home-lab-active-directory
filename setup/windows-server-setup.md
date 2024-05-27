@@ -84,43 +84,6 @@ This guide provides detailed instructions for setting up a Windows Server virtua
    - Set the Preferred DNS server to the static IP of the AD server itself (e.g., `127.0.0.1`).<br><br>
    ![Screenshot 2024-05-26 145957](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/ffe9a799-e9fb-4e58-a2e8-7acd07c758cf)
 
-### 5. Configure Domain / AD DS
-1. **Open Server Manager**:
-   - Server Manager should open automatically upon login. If not, open it from the Start menu.
-
-2. **Add Roles and Features**:
-   - In Server Manager, click on `Manage` > `Add Roles and Features`.
-   - Click `Next` through the initial prompts.
-   - Choose `Role-based or feature-based installation` and click `Next`.
-   - Select the local server (it should be highlighted by default) and click `Next`. <br><br>
-   ![Screenshot 2024-05-26 150451](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/37a9cfe2-ce08-42f4-a91a-31955e485570)
-
-3. **Install Active Directory Domain Services (AD DS)**:
-   - In the `Select server roles` step, check the box for `Active Directory Domain Services`.
-   - Click `Add Features` when prompted, then click `Next`.
-   - Click `Next` through the `Features` and `AD DS` pages.
-   - Click `Install`. Do not close the window until the installation is complete.
-
-4. **Promote the Server to a Domain Controller**:
-   - Once the installation is complete, click the `Promote this server to a domain controller` link.
-   - Choose `Add a new forest` and enter a domain name (e.g., `mydomain.com`). Click `Next`.
-   - Set the Forest and Domain functional levels to `Windows Server 2016`. Enter a Directory Services Restore Mode (DSRM) password. Click `Next`.
-   - Click `Next` through the DNS Options and Additional Options pages.
-   - In the `Paths` page, keep the default locations and click `Next`.
-   - Review the options and click `Next`, then click `Install`.
-
-5. **Restart the Server**:
-   - The server will automatically restart after the installation.
-
-### 6. Post-Installation Configuration
-
-1. **Verify AD Installation**:
-   - Log in to the server using the domain credentials (`mydomain\Administrator`).
-   - Open `Server Manager`.
-   - Go to `Tools` > `Active Directory Users and Computers`. Ensure that the domain is correctly set up. <br><br>
-   ![Screenshot 2024-05-26 213505](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/3c0c2524-3895-4d86-a0fb-f14334244570)
-
-
 
 ### Conclusion
 
