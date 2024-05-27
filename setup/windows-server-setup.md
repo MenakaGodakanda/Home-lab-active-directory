@@ -5,7 +5,7 @@ This guide provides detailed instructions for setting up a Windows Server virtua
 ## Prerequisites
 
 - Oracle VirtualBox installed on your host machine.
-- Windows Server ISO file (evaluation version available from [Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server)).
+- Windows Server ISO file (evaluation version available from [Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019)).
 
 ## Step-by-Step Instructions
 
@@ -16,7 +16,7 @@ This guide provides detailed instructions for setting up a Windows Server virtua
 
 2. **Create a New VM**:
    - Click on `New` to create a new VM.
-   - Name the VM (e.g., "AD_Server").
+   - Name the VM (e.g., "DC").
    - Set the Type to `Microsoft Windows` and the Version to `Windows 2019 (64-bit)`.
    - Click `Next`.
 
@@ -28,7 +28,7 @@ This guide provides detailed instructions for setting up a Windows Server virtua
    - Select `Create a virtual hard disk now` and click `Create`.
    - Choose `VDI (VirtualBox Disk Image)` and click `Next`.
    - Select `Dynamically allocated` and click `Next`.
-   - Set the disk size to at least 40 GB and click `Create`.
+   - Set the disk size to at least 20 GB and click `Create`.
 
 ### 2. Configure the Virtual Machine
 
@@ -40,9 +40,15 @@ This guide provides detailed instructions for setting up a Windows Server virtua
    - Browse to and select the Windows Server ISO file.
    - Click `OK` to save the settings.
 
-2. **Network Configuration**:
+2. **Processor Configuration**:
+   - Go to the `System` section.
+   - Under `Processor`, allocate 2 processors. More is better if your host system can support it.
+   - Click `OK` to save the settings.
+  
+3. **Network Configuration**:
    - Go to the `Network` section.
-   - Ensure `Adapter 1` is enabled and attached to `Bridged Adapter`. This will allow your VM to be on the same network as your host machine.
+   - Ensure `Adapter 1` is enabled and attached to `NAT`. This will allow your VM to connect to the same network as your host machine.
+   - Ensure `Adapter 2` is enabled and attached to `Internal Network`. This will allow your VM to connect to client VM.
    - Click `OK` to save the settings.
 
 ### 3. Install Windows Server
