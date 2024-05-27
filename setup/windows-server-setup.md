@@ -67,8 +67,24 @@ This guide provides detailed instructions for setting up a Windows Server virtua
    - After installation, set a strong password for the Administrator account.
    - Log in with the Administrator account.
 
-### 4. Configure Active Directory
+### 4. Configure NIC
 
+1. **Open Network Connections**:
+   - Go to `Control Panel` > `Network and Sharing Center` > `Change adapter settings`. You will see two networks and are required to rename them appropriately.<br><br>
+     ![Screenshot 2024-05-26 144351](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/3d0bbbe5-99a8-45c4-b12e-a743e40d7499)
+     
+   - `Ethernet 2` is the network adapter that connects to the Internet. You can right-click `Ethernet 2` and click status to check its IP address. Rename the `Ethernet 2` (e.g., "_INTERNET_").
+   - `Ethernet` is the internal network. You can right-click `Ethernet` and click status to check its IP address. Rename the `Ethernet` (e.g., "X_Internal_X").<br><br>
+![Screenshot 2024-05-26 145147](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/123f57a6-5e2d-484f-af3e-6a3975eb37e5)
+
+2. **Assign IP Address**:
+   - It is required to assign IP addrress to the internal network adapter (`X_Internal_X`). Right-click on your network adapter and select `Properties`.
+   - Select `Internet Protocol Version 4 (TCP/IPv4)` and click `Properties`.
+   - Set a static IP (e.g., `172.16.0.1`), subnet mask (e.g., `255.255.255.0`), and default gateway.
+   - Set the Preferred DNS server to the static IP of the AD server itself (e.g., `127.0.0.1`).<br><br>
+   ![Screenshot 2024-05-26 145957](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/ffe9a799-e9fb-4e58-a2e8-7acd07c758cf)
+
+### 5. Configure Domain / AD DS
 1. **Open Server Manager**:
    - Server Manager should open automatically upon login. If not, open it from the Start menu.
 
@@ -76,7 +92,8 @@ This guide provides detailed instructions for setting up a Windows Server virtua
    - In Server Manager, click on `Manage` > `Add Roles and Features`.
    - Click `Next` through the initial prompts.
    - Choose `Role-based or feature-based installation` and click `Next`.
-   - Select the local server (it should be highlighted by default) and click `Next`.
+   - Select the local server (it should be highlighted by default) and click `Next`. <br><br>
+   ![Screenshot 2024-05-26 150451](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/37a9cfe2-ce08-42f4-a91a-31955e485570)
 
 3. **Install Active Directory Domain Services (AD DS)**:
    - In the `Select server roles` step, check the box for `Active Directory Domain Services`.
@@ -86,7 +103,7 @@ This guide provides detailed instructions for setting up a Windows Server virtua
 
 4. **Promote the Server to a Domain Controller**:
    - Once the installation is complete, click the `Promote this server to a domain controller` link.
-   - Choose `Add a new forest` and enter a domain name (e.g., `mydomain.local`). Click `Next`.
+   - Choose `Add a new forest` and enter a domain name (e.g., `mydomain.com`). Click `Next`.
    - Set the Forest and Domain functional levels to `Windows Server 2016`. Enter a Directory Services Restore Mode (DSRM) password. Click `Next`.
    - Click `Next` through the DNS Options and Additional Options pages.
    - In the `Paths` page, keep the default locations and click `Next`.
@@ -95,22 +112,15 @@ This guide provides detailed instructions for setting up a Windows Server virtua
 5. **Restart the Server**:
    - The server will automatically restart after the installation.
 
-### 5. Post-Installation Configuration
+### 6. Post-Installation Configuration
 
 1. **Verify AD Installation**:
    - Log in to the server using the domain credentials (`mydomain\Administrator`).
    - Open `Server Manager`.
-   - Go to `Tools` > `Active Directory Users and Computers`. Ensure that the domain is correctly set up.
+   - Go to `Tools` > `Active Directory Users and Computers`. Ensure that the domain is correctly set up. <br><br>
+   ![Screenshot 2024-05-26 213505](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/3c0c2524-3895-4d86-a0fb-f14334244570)
 
-### 6. Network and DNS Configuration
 
-1. **Configure Network Adapter**:
-   - Ensure that your network adapter is set to a static IP address within your network range.
-   - Go to `Control Panel` > `Network and Sharing Center` > `Change adapter settings`.
-   - Right-click on your network adapter and select `Properties`.
-   - Select `Internet Protocol Version 4 (TCP/IPv4)` and click `Properties`.
-   - Set a static IP (e.g., `192.168.1.10`), subnet mask (e.g., `255.255.255.0`), and default gateway.
-   - Set the Preferred DNS server to the static IP of the AD server itself (e.g., `192.168.1.10`).
 
 ### Conclusion
 
