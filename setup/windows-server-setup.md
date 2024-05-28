@@ -89,4 +89,7 @@ This guide provides detailed instructions for setting up a Windows Server virtua
 
 Your Windows Server VM is now set up as a domain controller for your Active Directory domain. Proceed to configure your Windows Client VM and join it to this domain.
 
-For further steps, refer to other setup guides in this repository, such as joining a Windows Client to the AD domain and using PowerShell for automation.
+For further steps, refer to other setup guides in this repository.
+[Windows Client Setup](setup/windows-client-setup.md)
+[Install and Configure Active Directory](setup/active-directory-setup.md)
+[Use PowerShell to Add Users](setup/powershell-usage.md)
