@@ -29,3 +29,7 @@ This figure, which offers a high-level overview and visualisation, aids in under
 1. Clone this repository.
 2. Follow the setup instructions.
 3. Run the PowerShell script to add users to your AD.
+
+## License
+
+This project is licensed under the MIT License.
