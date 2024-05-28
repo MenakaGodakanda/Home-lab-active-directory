@@ -58,7 +58,7 @@ This guide provides detailed instructions for setting up a Windows Client virtua
 
 2. **Install the Operating System**:
    - Follow the prompts to install Windows 10.
-   - Choose your language, time, and keyboard preferences and click `Next`.
+   - Choose your `language`, `time`, and `keyboard preferences` and click `Next`.
    - Click `Install now`.
    - Enter your product key or choose `I don't have a product key` to use the trial version.
    - Select `Windows 10 Pro` and click `Next`.
@@ -67,36 +67,60 @@ This guide provides detailed instructions for setting up a Windows Client virtua
    - Choose the virtual hard disk and click `Next` to start the installation.
 
 3. **Initial Configuration**:
-   - After installation, set up a local account (you can use a temporary user, e.g., "LocalUser").
+   - After installation, set up a `region`, `keyboard preference` and `Skip` the `Second Keyboard Layout`.
+   - Click on `I don't have internet` in the `Network` page.
+   - Next click on `continiue with limited setup`.
+   - Set up a local account (you can use a temporary user, e.g., `user` and not require to enter a password).
    - Complete the initial setup process and log in with the local account.
+
 
 ### 4. Join the Windows Client to the AD Domain
 
-1. **Configure Network Settings**:
-   - Ensure the network adapter is set to obtain an IP address automatically (DHCP) and that the DNS server is set to the IP address of your AD Server.
-   - Go to `Control Panel` > `Network and Sharing Center` > `Change adapter settings`.
-   - Right-click on your network adapter and select `Properties`.
-   - Select `Internet Protocol Version 4 (TCP/IPv4)` and click `Properties`.
-   - Ensure `Obtain an IP address automatically` is selected.
-   - Set `Use the following DNS server addresses` to the IP address of your AD server (e.g., `192.168.1.10`).
+1. **Review Client Environment**:
+   - Open `Command Prompt` and type `ipconfig`. Ensure it shows your `IP Address` and `Default Gateway`. <br><br>
+   ![25](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/bb7b5c37-d153-4ee9-966f-1cfe347dc9d9)
+
+   - Ensure `DNS server` is working. type `ping www.google.com`.<br><br>
+   ![29](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/15823385-e5f1-40b3-ab9a-57a4d90e5f6f)
+
+   - Ensure `Domain Controller` is working. type `ping mydomain.com`.<br><br>
+   ![30](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/bb178ace-d7f5-4fa1-9540-3b2f120a1e1e)
 
 2. **Join the Domain**:
-   - Go to `Settings` > `System` > `About`.
-   - Under `Related settings`, click `System info`.
-   - Click `Change settings` next to `Computer name, domain, and workgroup settings`.
+   - Type `hostname` to view the current client name.<br><br>
+   ![31](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/6b3902cb-2694-4fd5-8c37-01239a1e167b)
+
+   - Right click on `Start Menu` > `System` > `Rename this PC (advanced)`.
+   - Click `Computer Name` > `Change` on the `System Properties` window.
    - In the `System Properties` window, click `Change`.
-   - In the `Computer Name/Domain Changes` window, select `Domain` and enter the domain name (e.g., `mydomain.local`).
+   - In the `Computer Name/Domain Changes` window, enter the computer name (e.g., `CLIENT1`), select `Domain` and enter the domain name (e.g., `mydomain.com`).
    - Click `OK` and provide the credentials of a domain administrator when prompted.
    - Restart the client machine.
 
 ### 5. Post-Domain Join Configuration
 
 1. **Log in with a Domain Account**:
-   - After restarting, log in using a domain account (e.g., `mydomain\Administrator`).
+   - After restarting, log in using a domain account (e.g., `mydomain\mgodakanda`).
 
 2. **Verify Domain Membership**:
-   - Open `Command Prompt` and type `whoami`. Ensure it shows your domain username.
+   - Open `Command Prompt` and type `whoami`. Ensure it shows your domain username.<br><br>
+   ![39](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/4c2812b5-ede4-451c-93c0-3f0f588d94df)
    - Go to `Control Panel` > `System and Security` > `System`. Verify the domain listed under `Computer name, domain, and workgroup settings`.
+
+
+### 6. Verify Join Configuration
+
+1. **DHCP**:
+   - Go to Domain Controller VM.
+   - Start > Server Manager > Tools > DHCP.
+   - DHCP > dc. mydomain.com > IPv4 > Scope [172.16.0.0] 172.16.0.100-200 > Address Leases >
+   - You can see one lease from client computer.
+  
+1. **Active Directory Users and Computers**:
+   - Start > Windows Administrative Tools > Active Directory Users and Computers.
+   - mydomain.com > Computers
+   - You can see client computer.
+  
 
 ### Conclusion
 
