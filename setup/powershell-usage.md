@@ -1,4 +1,4 @@
-# PowerShell Usage for Active Directory
+# Use PowerShell to Add Users
 
 This guide provides detailed instructions on using PowerShell to add users to your Active Directory (AD) domain. This will help automate user management tasks in your AD environment.
 
