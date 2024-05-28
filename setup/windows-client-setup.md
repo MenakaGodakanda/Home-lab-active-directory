@@ -129,4 +129,7 @@ This guide provides detailed instructions for setting up a Windows Client virtua
 
 Your Windows Client VM is now set up and joined to the Active Directory domain. You can now manage this client through the AD domain controller and use PowerShell scripts for automation.
 
-For further steps, refer to other setup guides in this repository, such as using PowerShell to add users to AD.
+For further steps, refer to other setup guides in this repository.
+- [Install and Configure Active Directory](setup/active-directory-setup.md)
+- [Use PowerShell to Add Users](setup/powershell-usage.md)
+
