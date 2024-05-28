@@ -220,19 +220,31 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
    - Specify the parent domain (e.g., `mydomain.com`)
    - Ensure the IP address is added and click `Next`.
 
-9. **WINS Servers**:
+10. **WINS Servers**:
    - Click `Next` on the `WINS Servers` page.
 
-10. **Activate Scope**:
+11. **Activate Scope**:
    - Check the box for `Yes, I want to activate this scope now` and click `Next`.
    - Click `Finish` to complete the new scope wizard.
 
-11. **Authorize DHCP Server**:
+12. **Authorize DHCP Server**:
    - Right-click on DHCP server and click `Authorize`.
    - Right-click again on DHCP server and click `Refresh`.
-   - You can see the IPv4 turns green and the scope. <br><br>
+   - You can see the scope and the IPv4 turns green. <br><br>
    ![86](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/2114d70e-505f-4eb4-9b8a-08ead8114da3)
 
+### 9. Enhance Security Configuration (optional) 
+
+1. **Open Server Manager**:
+   - Server Manager should open automatically upon logging in. If not, open it from the Start menu.
+
+2. **Open Local Server Dashboard**:
+   - In Server Manager, click on `Configure this local server`.
+  
+3. **Disable Enhanced Security**:
+   - Click  on `IE Enhanced Security Configuration` property to turn it off.
+   - Check the `off` button for `Adminstrators` and `Users`.
+   - Click `OK` to complete the enhanced security configuration. (This will allow you to access the Internet without any warnings, but it is not recommended in the production environment.)
  
 ### Conclusion
 
