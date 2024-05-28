@@ -48,7 +48,7 @@ This guide provides detailed instructions for setting up a Windows Server virtua
 3. **Network Configuration**:
    - Go to the `Network` section.
    - Ensure `Adapter 1` is enabled and attached to `NAT`. This will allow your VM to connect to the same network as your host machine.
-   - Ensure `Adapter 2` is enabled and attached to `Internal Network`. This will allow your VM to connect to client VM.
+   - Ensure `Adapter 2` is enabled and attached to `Internal Network` and name to `intnet`. This will allow your VM to connect to client VM.
    - Click `OK` to save the settings.
 
 ### 3. Install Windows Server
