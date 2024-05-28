@@ -57,12 +57,11 @@ This guide provides detailed instructions on using PowerShell to add users to yo
    ![100](https://github.com/MenakaGodakanda/Home-lab-active-directory/assets/156875412/2e2373ca-7e7c-4478-9132-f47bab16401a)
 
 
+### Conclusion
 
+The PowerShell script is created new users to your Active Directory (AD) domain. This will help automate user management tasks in your AD environment.
 
-
-
-
-
-
-
-
+For further steps, refer to other setup guides in this repository.
+- [Windows Server Setup](setup/windows-server-setup.md)
+- [Windows Client Setup](setup/windows-client-setup.md)
+- [Install and Configure Active Directory](setup/active-directory-setup.md)
