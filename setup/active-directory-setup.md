@@ -250,4 +250,7 @@ This guide provides detailed instructions for configuring Active Directory (AD) 
 
 Your Windows Server is now configured as an Active Directory Domain Controller. You have verified the AD installation and configured DNS. You can now proceed to join client machines to the domain and manage users and groups through Active Directory.
 
-For further steps, refer to other setup guides in this repository, such as configuring a Windows Client and using PowerShell to automate tasks.
+For further steps, refer to other setup guides in this repository, 
+- [Windows Server Setup](setup/windows-server-setup.md)
+- [Windows Client Setup](setup/windows-client-setup.md)
+- [Use PowerShell to Add Users](setup/powershell-usage.md)
