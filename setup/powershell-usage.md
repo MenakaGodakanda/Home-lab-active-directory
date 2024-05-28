@@ -24,7 +24,7 @@ This guide provides detailed instructions on using PowerShell to add users to yo
    - Ensure the Active Directory module for PowerShell is imported. This module is automatically installed when you add the AD DS role.<br>
    `Import-Module ActiveDirectory`
 
-### 3. Run Powershell Script 01
+### 3. Run Powershell Script
 
 1. **Download Powershell Script**:
    - Download the `Script` and extract it on `Desktop`.
@@ -40,7 +40,7 @@ This guide provides detailed instructions on using PowerShell to add users to yo
 
 4. **Run Powershell Script**:
    - Run below command to go to actual directory where the script is saved (Run `ls` command to ensure the file path and files are correct). <br>
-   `cd c:\users\a-mgodakanda\desktop\Script01`
+   `cd c:\users\a-mgodakanda\desktop\Script`
 
    - Click on `Run`to run the Powershell script or run below command.<br>
    `c:\users\a-mgodakanda\desktop\Script\Create_User01.ps1`
