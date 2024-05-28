@@ -110,8 +110,10 @@ This guide provides detailed instructions for setting up a Windows Client virtua
 
 ### 6. Verify Join Configuration
 
-1. **DHCP**:
-   - Go to Domain Controller VM.
+1. **Log into Domain Controller**:
+   - Log into Domain Controller VM.
+  
+2. **DHCP**:
    - Start > Server Manager > Tools > DHCP.
    - DHCP > dc. mydomain.com > IPv4 > Scope [172.16.0.0] 172.16.0.100-200 > Address Leases >
    - You can see one lease from client computer.
