@@ -108,19 +108,20 @@ This guide provides detailed instructions for setting up a Windows Client virtua
    - Go to `Control Panel` > `System and Security` > `System`. Verify the domain listed under `Computer name, domain, and workgroup settings`.
 
 
-### 6. Verify Join Configuration
+### 6. Verify Domain Join Configuration
 
 1. **Log into Domain Controller**:
-   - Log into Domain Controller VM.
+   - Log into Domain Controller (Windows Server) VM.
   
-2. **DHCP**:
-   - Start > Server Manager > Tools > DHCP.
-   - DHCP > dc. mydomain.com > IPv4 > Scope [172.16.0.0] 172.16.0.100-200 > Address Leases >
+2. **Verify DHCP**:
+   - Server Manager should open automatically upon logging in. If not, open it from the Start menu.
+   - In Server Manager window, go to `Tools` > `DHCP`.
+   - In DHCP window, go to `DHCP` > `dc. mydomain.com` > `IPv4` > `Scope [172.16.0.0] 172.16.0.100-200` > `Address Leases`.
    - You can see one lease from client computer.
   
-1. **Active Directory Users and Computers**:
-   - Start > Windows Administrative Tools > Active Directory Users and Computers.
-   - mydomain.com > Computers
+1. **Verify Active Directory Users and Computers**:
+   - Go to `Start` > `Windows Administrative Tools` > `Active Directory Users and Computers`.
+   - In Active Directory Users and Computers window, go to `mydomain.com` > `Computers`.
    - You can see client computer.
   
 
