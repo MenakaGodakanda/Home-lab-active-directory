@@ -1,4 +1,4 @@
-# Active Directory Setup
+# Install and Configure Active Directory
 
 This guide provides detailed instructions for configuring Active Directory (AD) on a Windows Server virtual machine (VM) in your home lab. This server will act as a domain controller for your AD domain.
 
